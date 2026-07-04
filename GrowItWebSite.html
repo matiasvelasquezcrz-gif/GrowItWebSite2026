@@ -330,8 +330,9 @@ footer > div{position:relative;z-index:1}
 .ft-update{text-align:center;margin-top:20px;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:1px;position:relative;z-index:1}
 
 /* WHATSAPP FLOAT */
-.wbtn{position:fixed;bottom:24px;right:24px;z-index:998;width:52px;height:52px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
-.wbtn:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(37,211,102,.5)}
+.wbtn{position:fixed;bottom:24px;right:24px;z-index:998;width:52px;height:52px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(37,211,102,.4);transition:opacity .4s,transform .4s cubic-bezier(.25,.46,.45,.94),box-shadow .2s;opacity:0;transform:translateX(40px);pointer-events:none}
+.wbtn.show{opacity:1;transform:translateX(0);pointer-events:auto}
+.wbtn:hover{transform:scale(1.08) translateX(0);box-shadow:0 6px 20px rgba(37,211,102,.5)}
 .wbtn svg{width:26px;height:26px;fill:#fff}
 
 /* COOKIE */
@@ -980,7 +981,13 @@ window.addEventListener('scroll',()=>{
     nav.style.transform='translateY(0)';
   }
   lastScroll=cur;
-},{passive:true});
+}, { passive: true });
+
+// WhatsApp button appear after hero
+const wbtn = document.querySelector('.wbtn');
+window.addEventListener('scroll', () => {
+  wbtn.classList.toggle('show', window.scrollY > 500);
+}, { passive: true });
 </script>
 </body>
 </html>
