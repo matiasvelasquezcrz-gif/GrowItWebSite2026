@@ -837,7 +837,7 @@ function submitForm(){
     '• Mensaje: ' + (m || 'Sin mensaje adicional')
   );
 
-  window.open('https://wa.me/50235060070?text=' + msg, '_blank','noopener,noreferrer');
+  window.location.href = 'https://wa.me/50235060070?text=' + msg;
 
   document.getElementById('formWrap').style.display='none';
   document.getElementById('formThnk').style.display='block';
