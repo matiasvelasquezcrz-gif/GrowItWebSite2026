@@ -358,11 +358,20 @@ footer{border-top:0.5px solid var(--line);padding:52px 48px 36px}
 [data-theme="dark"] .cr-body h2{color:var(--w)}
 [data-theme="dark"] .cr-body p{color:rgba(255,255,255,.65)}
 
-/* IMAGE BREAK */
-.img-break{width:100%;height:400px;background:url('antigua-guatemala.jpg') center/cover no-repeat;position:relative}
-.img-break::after{content:'';position:absolute;inset:0;background:rgba(17,16,8,.25)}
-.img-break .ib-text{position:absolute;bottom:40px;left:48px;z-index:2;font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#fff;letter-spacing:1px;line-height:1.3}
-.img-break .ib-text span{font-size:11px;font-family:'Inter',sans-serif;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);display:block;margin-top:8px;font-weight:300}
+/* NOSOTROS */
+.nosotros{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--line)}
+.nos-img{min-height:400px;background:url('antigua-guatemala.jpg') center/cover no-repeat;position:relative}
+.nos-img::after{content:'';position:absolute;inset:0;background:rgba(17,16,8,.35)}
+.nos-body{padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+.nos-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.nos-body h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,38px);font-weight:300;color:var(--ink);letter-spacing:-.5px;line-height:1.15;margin-bottom:20px}
+.nos-body p{font-size:13px;line-height:1.9;color:var(--ink2);font-weight:300;max-width:480px}
+.nos-body .nos-firma{margin-top:24px;display:flex;align-items:center;gap:12px}
+.nos-body .nos-firma img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.nos-body .nos-firma div{font-size:12px;color:var(--ink);font-weight:400}
+.nos-body .nos-firma span{font-size:10px;color:var(--muted);font-weight:300;display:block}
+[data-theme="dark"] .nos-body h2{color:var(--w)}
+[data-theme="dark"] .nos-body p{color:rgba(255,255,255,.65)}
 </style>
 </head>
 <body>
@@ -591,10 +600,20 @@ footer{border-top:0.5px solid var(--line);padding:52px 48px 36px}
 
 <div class="hl"></div>
 
-<!-- IMAGE BREAK: Antigua Guatemala -->
-<div class="img-break reveal scale-in">
-  <div class="ib-text">Antigua Guatemala<span>Donde la historia y el volcán se encuentran</span></div>
-</div>
+<!-- NOSOTROS -->
+<section class="sec" style="padding:0;max-width:100%">
+  <div class="nosotros">
+    <div class="nos-img"></div>
+    <div class="nos-body reveal from-right">
+      <div class="nos-tag">Quiénes somos</div>
+      <h2>Hecho en Guatemala,<br>con corazón de artesano<br>y mente de estratega.</h2>
+      <p>Growit Studio nació en Guatemala con una idea clara: que los negocios locales tengan una web tan buena como cualquier empresa grande. Sin plantillas, sin rodeos, sin letra chica. Solo diseño limpio que vende.</p>
+      <div class="nos-firma">
+        <div>— Growit Studio<span>Diseño web · Guatemala</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="hl"></div>
 
