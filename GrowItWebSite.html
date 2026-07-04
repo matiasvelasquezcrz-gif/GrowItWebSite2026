@@ -807,12 +807,12 @@ footer{padding:36px 20px 28px}
     </div>
     <div class="contact-right reveal from-right">
       <div id="formWrap">
-        <div class="field"><label>Nombre</label><input type="text" placeholder="Tu nombre completo" id="fn"></div>
-        <div class="field"><label>WhatsApp o email</label><input type="text" placeholder="+502 o tu@email.com" id="fc"></div>
-        <div class="field"><label>Tipo de proyecto</label>
+        <div class="field"><label for="fn">Nombre</label><input type="text" placeholder="Tu nombre completo" id="fn"></div>
+        <div class="field"><label for="fc">WhatsApp o email</label><input type="text" placeholder="+502 o tu@email.com" id="fc"></div>
+        <div class="field"><label for="ft">Tipo de proyecto</label>
           <select id="ft"><option value="">Selecciona una opción</option><option>Web básica ($79)</option><option>Web profesional ($129)</option><option>Web para clínica o consultorio</option><option>Web para hotel o restaurante</option><option>Tienda en línea (e-commerce)</option><option>App o sistema a medida</option><option>Mantenimiento web anual</option><option>Otro</option></select>
         </div>
-        <div class="field"><label>¿Qué necesitas?</label><textarea id="fm" placeholder="Cuéntanos sobre tu negocio y lo que buscas lograr..."></textarea></div>
+        <div class="field"><label for="fm">¿Qué necesitas?</label><textarea id="fm" placeholder="Cuéntanos sobre tu negocio y lo que buscas lograr..."></textarea></div>
         <!-- Honeypot anti-spam: invisible para personas, los bots lo llenan automáticamente -->
         <input type="text" id="fweb" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
         <button class="fsub" onclick="submitForm()">Enviar solicitud</button>
