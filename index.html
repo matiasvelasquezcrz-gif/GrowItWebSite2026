@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO BÁSICO ===== -->
+<title>Growit Studio | Diseño y Desarrollo Web en Guatemala</title>
+<meta name="description" content="Diseñamos webs a medida para clínicas, hoteles, restaurantes y negocios en Guatemala y Centroamérica. Sin plantillas genéricas, rápidas y con SEO incluido.">
+<meta name="keywords" content="diseño web Guatemala, desarrollo web Guatemala, páginas web para negocios, web para clínicas, web para hoteles, web para restaurantes, e-commerce Guatemala">
+<meta name="author" content="Growit Studio">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'">
+<link rel="canonical" href="https://matiasvelasquezcrz-gif.github.io/GrowItWebSite/">
+
+<!-- ===== OPEN GRAPH (previews en WhatsApp, Facebook, Instagram) ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Growit Studio">
+<meta property="og:title" content="Growit Studio | Diseño y Desarrollo Web en Guatemala">
+<meta property="og:description" content="Webs a medida para clínicas, hoteles, restaurantes y negocios en Guatemala. Diseño minimalista, rápido y con SEO incluido.">
+<meta property="og:url" content="https://matiasvelasquezcrz-gif.github.io/GrowItWebSite/">
+<meta property="og:locale" content="es_GT">
+
+<!-- ===== TWITTER CARD ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Growit Studio | Diseño y Desarrollo Web en Guatemala">
+<meta name="twitter:description" content="Webs a medida para clínicas, hoteles, restaurantes y negocios en Guatemala y Centroamérica.">
+
+<!-- ===== FAVICON (monograma G, sin necesidad de archivo externo) ===== -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111008'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23c9a85c' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+
+<!-- ===== DATOS ESTRUCTURADOS PARA GOOGLE (LocalBusiness) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Growit Studio",
+  "description": "Diseño y desarrollo web a medida para negocios en Guatemala y Centroamérica.",
+  "areaServed": ["Guatemala", "Centroamérica"],
+  "email": "grow.it.management@gmail.com",
+  "telephone": "+50235060070",
+  "sameAs": ["https://instagram.com/groow_it.official"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--w:#fff;--off:#f9f8f6;--line:#e0ddd8;--muted:#888580;--ink:#111008;--ink2:#2e2c27;--gold:#b8975a}
+[data-theme="dark"]{--w:#0d0c0a;--off:#111008;--line:#1f1d18;--muted:#6b685e;--ink:#ece8de;--ink2:#b8b2a6;--gold:#c9a85c}
+body{font-family:'Inter',sans-serif;background:var(--w);color:var(--ink);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ── ANIMACIONES ── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
+.reveal.from-left{transform:translateX(-50px)}
+.reveal.from-right{transform:translateX(50px)}
+.reveal.scale-in{transform:scale(.94)}
+.reveal.visible{opacity:1;transform:none}
+.reveal.delay-1{transition-delay:.1s}
+.reveal.delay-2{transition-delay:.2s}
+.reveal.delay-3{transition-delay:.3s}
+.reveal.delay-4{transition-delay:.4s}
+.reveal.delay-5{transition-delay:.5s}
+.reveal.delay-6{transition-delay:.6s}
+.reveal.delay-7{transition-delay:.7s}
+.reveal.delay-8{transition-delay:.8s}
+
+/* LINEA ANIMADA */
+.line-draw{width:0;height:0.5px;background:var(--line);transition:width 1.2s cubic-bezier(.25,.46,.45,.94)}
+.line-draw.visible{width:100%}
+
+/* COUNTER */
+.count-num{display:inline-block}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:22px 48px;border-bottom:0.5px solid var(--line);background:color-mix(in srgb,var(--w) 96%,transparent);backdrop-filter:blur(16px);transform:translateY(-100%);transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+nav.loaded{transform:translateY(0)}
+.logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:21px;letter-spacing:4px;text-transform:uppercase;color:var(--ink)}
+.logo span{color:var(--gold)}
+.nl{display:flex;gap:32px;align-items:center}
+.nl a{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:color .2s;text-decoration:none}
+.nl a:hover{color:var(--ink)}
+.ncta{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);cursor:pointer;padding:10px 24px;border:0.5px solid var(--ink);background:transparent;font-family:'Inter',sans-serif;font-weight:400;transition:all .2s}
+.ncta:hover{background:var(--ink);color:var(--w)}
+
+/* HERO */
+.hero{padding:100px 48px 80px;max-width:1000px;margin:0 auto;overflow:hidden}
+.kicker{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:40px;display:flex;align-items:center;gap:16px}
+.kicker-line{width:0;height:0.5px;background:var(--muted);transition:width .8s .4s cubic-bezier(.25,.46,.45,.94)}
+.kicker-line.visible{width:28px}
+.hero-word{display:inline-block;overflow:hidden}
+.hero-word span{display:inline-block;transform:translateY(100%);opacity:0;transition:transform .8s cubic-bezier(.25,.46,.45,.94),opacity .8s cubic-bezier(.25,.46,.45,.94)}
+.hero-word span.up{transform:translateY(0);opacity:1}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,88px);font-weight:300;line-height:1.02;letter-spacing:-1.5px;color:var(--ink);margin-bottom:44px;max-width:740px}
+h1 em{font-style:italic;color:var(--gold)}
+.hsub{font-size:15px;line-height:1.85;color:var(--ink2);max-width:420px;margin-bottom:48px;font-weight:300}
+.hact{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.bm{font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;background:var(--ink);color:var(--w);border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:400;transition:opacity .2s,transform .2s}
+.bm:hover{opacity:.8;transform:translateY(-1px)}
+.bg-btn{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);cursor:pointer;background:none;border:none;font-family:'Inter',sans-serif;font-weight:300;text-decoration:underline;text-underline-offset:5px;transition:color .2s}
+.bg-btn:hover{color:var(--ink)}
+.hl{height:0.5px;background:var(--line)}
+
+/* STATS */
+.bar{display:flex;border-bottom:0.5px solid var(--line)}
+.bi{flex:1;padding:40px 48px;border-right:0.5px solid var(--line);overflow:hidden}
+.bi:last-child{border-right:none}
+.bn{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;color:var(--ink);letter-spacing:-.5px;line-height:1;margin-bottom:8px}
+.bl{font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+
+/* MANT */
+.mant{background:var(--ink);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.mant-left p:first-child{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.mant-left h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--w);letter-spacing:-.3px;margin-bottom:6px}
+.mant-left p.sub{font-size:13px;color:rgba(255,255,255,.45);font-weight:300}
+.mant-right{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.mant-price strong{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--w);display:block;letter-spacing:-.5px;line-height:1}
+.mant-price span{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.mant-btn{font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:13px 28px;border:0.5px solid rgba(255,255,255,.3);color:var(--w);cursor:pointer;background:transparent;font-family:'Inter',sans-serif;font-weight:400;white-space:nowrap;transition:all .2s}
+.mant-btn:hover{background:var(--w);color:var(--ink)}
+
+/* SECTION */
+.sec{padding:88px 48px;max-width:1000px;margin:0 auto}
+.stag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:52px;display:flex;align-items:center;gap:16px}
+.stag::before{content:'';width:22px;height:0.5px;background:var(--muted)}
+
+/* SERVICES */
+.services{border-top:0.5px solid var(--line)}
+.svc{display:grid;grid-template-columns:180px 1fr 200px;border-bottom:0.5px solid var(--line);padding:34px 0;cursor:pointer;position:relative;overflow:hidden}
+.svc::after{content:'';position:absolute;left:0;bottom:0;width:0;height:0.5px;background:var(--gold);transition:width .4s cubic-bezier(.25,.46,.45,.94)}
+.svc:hover::after{width:100%}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--muted);font-weight:300;letter-spacing:1px;padding-top:3px;transition:color .2s}
+.svc:hover .svc-num{color:var(--gold)}
+.svc-body h3{font-size:16px;font-weight:400;color:var(--ink);margin-bottom:8px;letter-spacing:.1px;transition:color .2s}
+.svc:hover .svc-body h3{color:var(--gold)}
+.svc-body p{font-size:13px;line-height:1.8;color:var(--ink2);font-weight:300;max-width:480px}
+.svc-price{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--ink);text-align:right;letter-spacing:-.3px;transition:color .2s}
+.svc:hover .svc-price{color:var(--gold)}
+.svc-price span{font-family:'Inter',sans-serif;font-size:10px;font-weight:300;color:var(--muted);letter-spacing:1px;display:block;text-transform:uppercase;margin-top:4px}
+
+/* PORT */
+.port-grid{display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--line);border-left:0.5px solid var(--line)}
+.port-card{border-right:0.5px solid var(--line);border-bottom:0.5px solid var(--line);cursor:pointer;overflow:hidden;position:relative}
+.port-card-inner{transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+.port-card:hover .port-card-inner{transform:translateY(-4px)}
+.mock{width:100%;height:180px;overflow:hidden;border-bottom:0.5px solid var(--line);position:relative}
+.mock-overlay{position:absolute;inset:0;background:rgba(17,16,8,0);transition:background .3s;display:flex;align-items:center;justify-content:center;z-index:2}
+.mock-overlay span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--w);opacity:0;transition:opacity .3s;font-weight:400}
+.port-card:hover .mock-overlay{background:rgba(17,16,8,.4)}
+.port-card:hover .mock-overlay span{opacity:1}
+
+/* MOCK CLINICA */
+.mock-clinic{background:#f0f2ff;display:flex;flex-direction:column;height:100%}
+.mc-nav{background:#fff;height:24px;display:flex;align-items:center;padding:0 14px;gap:6px;border-bottom:0.5px solid #e0e4f0;flex-shrink:0}
+.mc-dot{width:5px;height:5px;border-radius:50%;background:#e0e0e0}
+.mc-logo{font-size:7px;font-weight:500;color:#2d3a8c;letter-spacing:1px;margin:0 auto}
+.mc-links{display:flex;gap:8px}
+.mc-links span{font-size:5px;color:#9e9e9e}
+.mc-hero{background:linear-gradient(135deg,#1e2d7d,#4055b0);flex:1;display:flex;align-items:center;padding:14px}
+.mc-hero h4{font-size:10px;font-weight:300;color:rgba(255,255,255,.9);margin-bottom:4px}
+.mc-hero p{font-size:6px;color:rgba(255,255,255,.55);margin-bottom:10px}
+.mc-cta{background:#fff;color:#2d3a8c;font-size:6px;padding:4px 10px;font-weight:500;display:inline-block}
+.mc-cards{display:flex;padding:10px 14px;gap:5px;background:#fff;flex-shrink:0}
+.mc-card{flex:1;background:#f0f2ff;border:0.5px solid #e0e4f0;padding:7px 5px;text-align:center}
+.mc-card-icon{width:14px;height:14px;background:#d0d4f0;border-radius:50%;margin:0 auto 3px}
+.mc-card p{font-size:5px;color:#555}
+
+/* MOCK HOTEL */
+.mock-hotel{background:#0f0d08;height:100%;display:flex;flex-direction:column;position:relative}
+.mh-nav{height:22px;display:flex;align-items:center;padding:0 14px;justify-content:space-between;position:absolute;top:0;left:0;right:0;z-index:3}
+.mh-logo{font-size:8px;color:#fff;letter-spacing:3px;font-family:'Cormorant Garamond',serif}
+.mh-links{display:flex;gap:8px}
+.mh-links span{font-size:5px;color:rgba(255,255,255,.45)}
+.mh-bg{flex:1;background:linear-gradient(160deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.65) 100%),linear-gradient(135deg,#b8956a 0%,#8a6030 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:28px 14px 14px}
+.mh-content h4{font-size:13px;color:#fff;font-family:'Cormorant Garamond',serif;font-weight:300;letter-spacing:2px;margin-bottom:4px}
+.mh-content p{font-size:6px;color:rgba(255,255,255,.55);letter-spacing:1px;margin-bottom:10px}
+.mh-btn{border:0.5px solid rgba(255,255,255,.45);color:#fff;font-size:5px;padding:5px 14px;letter-spacing:1.5px;display:inline-block}
+.mh-rooms{display:flex;background:#fff;flex-shrink:0}
+.mh-room{flex:1;padding:7px;border-right:0.5px solid #e0ddd8;text-align:center}
+.mh-room:last-child{border-right:none}
+.mh-room p:first-child{font-size:5px;color:#888;margin-bottom:2px}
+.mh-room p:last-child{font-size:8px;color:#111;font-weight:500}
+
+/* MOCK ECOM */
+.mock-ecom{background:#fff;height:100%;display:flex;flex-direction:column}
+.me-nav{height:22px;display:flex;align-items:center;padding:0 14px;border-bottom:0.5px solid #eee;gap:8px;flex-shrink:0}
+.me-logo{font-size:8px;font-weight:500;color:#111;letter-spacing:1px}
+.me-search{flex:1;height:10px;background:#f5f5f5;border-radius:2px;margin:0 8px}
+.me-icon{width:10px;height:10px;background:#e0e0e0;border-radius:50%;margin-left:3px}
+.me-banner{background:linear-gradient(135deg,#111,#2a2a2a);height:56px;display:flex;align-items:center;padding:0 14px;gap:10px;flex-shrink:0}
+.me-banner h4{font-size:9px;color:#fff;font-weight:300;margin-bottom:2px}
+.me-banner p{font-size:6px;color:rgba(255,255,255,.45)}
+.me-btn{background:#fff;color:#111;font-size:5px;padding:4px 10px;font-weight:500;white-space:nowrap;margin-left:auto}
+.me-products{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 14px;flex:1}
+.me-prod{background:#f9f9f9}
+.me-prod-img{height:32px;background:#e8e8e8}
+.me-prod-name{font-size:5px;color:#333;padding:3px 4px 1px}
+.me-prod-price{font-size:7px;color:#111;font-weight:500;padding:0 4px 3px}
+
+/* MOCK CRM */
+.mock-crm{background:#0a0a0a;height:100%;display:flex}
+.crm-side{width:44px;background:#141414;padding:10px 7px;display:flex;flex-direction:column;gap:7px;border-right:0.5px solid #222;flex-shrink:0}
+.crm-si{width:30px;height:22px;background:#1e1e1e;border-radius:2px}
+.crm-si.act{background:var(--gold)}
+.crm-main{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px}
+.crm-title{font-size:8px;color:#fff;font-weight:400;letter-spacing:.5px}
+.crm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.crm-stat{background:#141414;padding:6px;border-radius:2px}
+.crm-stat p:first-child{font-size:11px;font-weight:500}
+.crm-stat p:last-child{font-size:5px;color:#555;margin-top:1px}
+.crm-table{background:#141414;border-radius:2px;overflow:hidden;flex:1}
+.crm-row{display:flex;align-items:center;gap:5px;padding:5px 7px;border-bottom:0.5px solid #1e1e1e}
+.crm-row:last-child{border-bottom:none}
+.crm-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.crm-name{font-size:6px;color:#aaa;flex:1}
+.crm-badge{font-size:5px;padding:2px 5px;border-radius:2px}
+
+/* PORT INFO */
+.port-info{padding:28px 32px}
+.port-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.port-h{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--ink);margin-bottom:8px}
+.port-d{font-size:12px;color:var(--ink2);line-height:1.6;font-weight:300;margin-bottom:14px}
+.port-result{font-size:11px;color:var(--gold);font-weight:400;letter-spacing:.3px}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:0.5px solid var(--line);border-left:0.5px solid var(--line)}
+.wi{padding:40px 32px;border-right:0.5px solid var(--line);border-bottom:0.5px solid var(--line);transition:background .25s}
+.wi:hover{background:var(--off)}
+.wi-n{font-size:10px;letter-spacing:2px;color:var(--gold);margin-bottom:20px;font-weight:400;text-transform:uppercase}
+.wi h4{font-size:14px;font-weight:400;color:var(--ink);margin-bottom:8px}
+.wi p{font-size:12px;line-height:1.75;color:var(--ink2);font-weight:300}
+
+/* PROCESS */
+.process{border-top:0.5px solid var(--line)}
+.ps{display:grid;grid-template-columns:60px 1fr auto;border-bottom:0.5px solid var(--line);padding:32px 0;align-items:start;position:relative;overflow:hidden}
+.ps::before{content:'';position:absolute;left:0;top:0;width:2px;height:0;background:var(--gold);transition:height .6s cubic-bezier(.25,.46,.45,.94)}
+.ps.visible::before{height:100%}
+.ps-n{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--muted);font-weight:300;letter-spacing:1px;padding-top:2px}
+.ps h3{font-size:15px;font-weight:400;color:var(--ink);margin-bottom:7px}
+.ps p{font-size:13px;line-height:1.8;color:var(--ink2);font-weight:300}
+.ps-days{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:400;text-align:right;white-space:nowrap;padding-top:2px}
+
+/* FAQ */
+.faq-item{border-bottom:0.5px solid var(--line);padding:24px 0;cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q h4{font-size:14px;font-weight:400;color:var(--ink);letter-spacing:.1px}
+.faq-q span{font-size:18px;color:var(--muted);transition:transform .25s;font-weight:300}
+.faq-item.open .faq-q span{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.25,.46,.45,.94),padding .35s;padding:0 32px 0 0}
+.faq-item.open .faq-a{max-height:200px;padding:12px 32px 0 0}
+.faq-a p{font-size:13px;color:var(--ink2);line-height:1.8;font-weight:300}
+
+/* PLANS */
+.plans-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));border-top:0.5px solid var(--line);border-left:0.5px solid var(--line)}
+.plan-divider{grid-column:1/-1;padding:40px 0 16px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);border-bottom:0.5px solid var(--line);display:flex;align-items:center;gap:16px;margin-top:8px}
+.plan-divider::after{content:'';flex:1;height:0.5px;background:var(--line)}
+.plan.mt{border-top:0.5px solid var(--gold);position:relative}
+.plan.mt::before{content:'ANUAL';position:absolute;top:-8px;right:12px;font-size:8px;letter-spacing:2px;color:var(--gold);background:var(--w);padding:0 6px}
+.plan{padding:40px 28px;border-right:0.5px solid var(--line);border-bottom:0.5px solid var(--line);transition:transform .3s cubic-bezier(.25,.46,.45,.94)}
+.plan:hover{transform:translateY(-4px)}
+.plan.ft{background:var(--ink)}
+.plan.ft:hover{transform:translateY(-4px)}
+.pt{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;font-weight:400}
+.plan.ft .pt{color:rgba(255,255,255,.35)}
+.pp{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;letter-spacing:-1.5px;color:var(--ink);line-height:1;margin-bottom:4px}
+.plan.ft .pp{color:var(--w)}
+.pper{font-size:11px;color:var(--muted);margin-bottom:28px;font-weight:300}
+.plan.ft .pper{color:rgba(255,255,255,.35)}
+.pf{list-style:none;margin-bottom:32px}
+.pf li{font-size:12px;color:var(--ink2);padding:10px 0;border-bottom:0.5px solid var(--line);font-weight:300;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pf li:first-child{border-top:0.5px solid var(--line)}
+.pf li span{color:var(--muted);font-size:10px;text-align:right}
+.plan.ft .pf li{color:rgba(255,255,255,.65);border-color:rgba(255,255,255,.08)}
+.plan.ft .pf li span{color:rgba(255,255,255,.3)}
+.pb{width:100%;padding:12px;background:transparent;border:0.5px solid var(--ink);color:var(--ink);font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;font-weight:400;transition:all .2s}
+.pb:hover{background:var(--ink);color:var(--w)}
+.plan.ft .pb{border-color:rgba(255,255,255,.4);color:var(--w)}
+.plan.ft .pb:hover{background:var(--w);color:var(--ink)}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--line)}
+.contact-left{padding:64px 48px 64px 0;border-right:0.5px solid var(--line)}
+.contact-right{padding:64px 0 64px 64px}
+.contact-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;letter-spacing:-.5px;line-height:1.1;margin-top:12px;margin-bottom:24px;color:var(--ink)}
+.contact-left .sub{font-size:13px;line-height:1.9;color:var(--ink2);font-weight:300;margin-bottom:32px}
+.cdetail{font-size:12px;color:var(--ink);padding:14px 0;border-bottom:0.5px solid var(--line);display:flex;justify-content:space-between}
+.cdetail span{color:var(--muted);font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.cdetail a{color:var(--ink);text-decoration:none;transition:color .15s}
+.cdetail a:hover{color:var(--gold)}
+.social-links{display:flex;gap:16px;margin-top:24px}
+.social-link{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;font-weight:400}
+.social-link:hover{color:var(--ink)}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:400}
+.field input,.field select,.field textarea{width:100%;padding:13px 0;border:none;border-bottom:0.5px solid var(--line);background:transparent;color:var(--ink);font-size:14px;font-family:'Inter',sans-serif;font-weight:300;outline:none;transition:border-color .2s;-webkit-appearance:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ink)}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.field select{cursor:pointer;color:var(--ink2)}
+.field textarea{resize:none;height:80px}
+.fsub{width:100%;padding:15px;margin-top:8px;background:var(--ink);color:var(--w);border:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;font-weight:400;transition:opacity .2s,transform .2s}
+.fsub:hover{opacity:.8;transform:translateY(-1px)}
+.fthnk{display:none;padding:60px 0;text-align:center}
+.fthnk p{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--ink);margin-bottom:8px}
+.fthnk span{font-size:13px;color:var(--muted);font-weight:300}
+
+/* FOOTER */
+footer{border-top:0.5px solid var(--line);padding:52px 48px 36px}
+.ft-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:48px}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:18px;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:12px}
+.ft-logo span{color:var(--gold)}
+.ft-brand p{font-size:12px;color:var(--muted);font-weight:300;max-width:200px;line-height:1.7}
+.ft-col h5{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);margin-bottom:16px;font-weight:400}
+.ft-col a{display:block;font-size:12px;color:var(--muted);margin-bottom:10px;cursor:pointer;font-weight:300;transition:color .15s;text-decoration:none}
+.ft-col a:hover{color:var(--ink)}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:0.5px solid var(--line);flex-wrap:wrap;gap:8px}
+.ft-bottom p{font-size:11px;color:var(--muted);font-weight:300}
+
+/* COOKIE */
+.ck{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--w);border-top:0.5px solid var(--line);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;transform:translateY(100%);transition:transform .5s .8s cubic-bezier(.25,.46,.45,.94)}
+.ck.show{transform:translateY(0)}
+.ck.hidden{display:none}
+.ck p{font-size:12px;color:var(--ink2);font-weight:300;line-height:1.6}
+.ck p a{color:var(--ink);text-decoration:underline;cursor:pointer}
+.ckb{display:flex;gap:10px}
+.cbd,.cba{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:9px 18px;cursor:pointer;font-family:'Inter',sans-serif;font-weight:400;transition:all .2s;border:none}
+.cbd{background:transparent;color:var(--muted);border:0.5px solid var(--line)}
+.cba{background:var(--ink);color:var(--w)}
+
+/* LEGAL */
+.lbg{position:fixed;inset:0;background:rgba(17,16,8,0);display:flex;align-items:center;justify-content:center;z-index:300;padding:24px;pointer-events:none;transition:background .3s}
+.lbg.open{background:rgba(17,16,8,.55);pointer-events:all}
+.lbox{background:var(--w);width:min(560px,100%);padding:52px;max-height:80vh;overflow-y:auto;transform:translateY(30px);opacity:0;transition:transform .35s,opacity .35s}
+.lbg.open .lbox{transform:translateY(0);opacity:1}
+.lbox h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:32px;color:var(--ink)}
+.lbox h3{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);margin:24px 0 10px;font-weight:500}
+.lbox p{font-size:13px;color:var(--ink2);line-height:1.8;margin-bottom:10px;font-weight:300}
+.lclose{margin-top:32px;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:13px 28px;background:var(--ink);color:var(--w);border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:400}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <span class="logo">Grow<span>it</span></span>
+  <div class="nl">
+    <a onclick="goTo('#servicios')">Servicios</a>
+    <a onclick="goTo('#portafolio')">Portafolio</a>
+    <a onclick="goTo('#faq')">FAQ</a>
+    <a onclick="goTo('#planes')">Inversión</a>
+    <button class="ncta" onclick="goTo('#contacto')">Hablemos</button>
+    <button id="themeToggle" style="background:none;border:none;cursor:pointer;padding:6px;border-radius:50%;color:var(--muted);transition:color .2s,background .2s;display:flex;align-items:center;justify-content:center" onclick="toggleTheme()" aria-label="Cambiar tema">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="kicker">
+    <div class="kicker-line" id="kickerLine"></div>
+    <span class="reveal">Diseño web — Guatemala</span>
+  </div>
+  <h1>
+    <div class="hero-word"><span id="w1">Tu</span></div>
+    <div class="hero-word"><span id="w2">&nbsp;negocio</span></div>
+    <div class="hero-word"><span id="w3">&nbsp;merece</span></div><br>
+    <div class="hero-word"><span id="w4">una</span></div>
+    <div class="hero-word"><span id="w5">&nbsp;web</span></div>
+    <div class="hero-word"><span id="w6">&nbsp;que</span></div><br>
+    <div class="hero-word"><span id="w7"><em>trabaje</em></span></div>
+    <div class="hero-word"><span id="w8">&nbsp;<em>por ti.</em></span></div>
+  </h1>
+  <p class="hsub reveal delay-3">Diseñamos webs y apps para clínicas, hoteles y negocios en Guatemala. Rápidas, modernas y sin plantillas genéricas. Tu competencia no tendrá nada igual.</p>
+  <div class="hact reveal delay-4">
+    <button class="bm" onclick="goTo('#contacto')">Solicitar propuesta gratis</button>
+    <button class="bg-btn" onclick="goTo('#portafolio')">Ver portafolio</button>
+  </div>
+</section>
+
+<div class="hl"></div>
+
+<!-- STATS -->
+<div class="bar">
+  <div class="bi reveal delay-1"><div class="bn" data-target="12" data-suffix="">0</div><div class="bl">Días promedio de entrega</div></div>
+  <div class="bi reveal delay-2"><div class="bn" data-target="79" data-prefix="$">0</div><div class="bl">Desde</div></div>
+  <div class="bi reveal delay-3"><div class="bn" data-target="30" data-suffix=" días">0</div><div class="bl">Soporte incluido</div></div>
+  <div class="bi reveal delay-4" style="display:flex;align-items:center;justify-content:center;text-align:center"><div class="bl" style="font-size:11px;letter-spacing:1px;line-height:1.6;text-transform:none;color:var(--ink2)">Estudio nuevo,<br>atención 1 a 1 garantizada</div></div>
+</div>
+
+<div class="hl"></div>
+
+<!-- MANT -->
+<div class="mant reveal">
+  <div class="mant-left">
+    <p>Mantenimiento anual</p>
+    <h3>Web segura y actualizada todo el año</h3>
+    <p class="sub">Dominio, hosting, seguridad y cambios de contenido. Una vez al año, sin preocupaciones.</p>
+  </div>
+  <div class="mant-right">
+    <div class="mant-price"><strong>$75</strong><span>plan esencial / año</span></div>
+    <div class="mant-price"><strong>$140</strong><span>plan completo / año</span></div>
+    <button class="mant-btn" onclick="goTo('#planes')">Ver inversión</button>
+  </div>
+</div>
+
+<div class="hl"></div>
+
+<!-- SERVICIOS -->
+<section class="sec" id="servicios">
+  <div class="stag reveal">Lo que hacemos</div>
+  <div class="services">
+    <div class="svc reveal delay-1" onclick="goTo('#contacto')">
+      <div class="svc-num">01</div>
+      <div class="svc-body"><h3>Web básica para negocios</h3><p>Para el negocio que necesita presencia digital ya. Diseño limpio, contacto directo y lista en menos de una semana.</p></div>
+      <div class="svc-price">$79<span>pago único</span></div>
+    </div>
+    <div class="svc reveal delay-2" onclick="goTo('#contacto')">
+      <div class="svc-num">02</div>
+      <div class="svc-body"><h3>Web para clínicas y consultorios</h3><p>Presencia que genera confianza antes de que el paciente llegue. Agenda online, especialistas y diseño que refleja tu nivel.</p></div>
+      <div class="svc-price">desde $350<span>pago único</span></div>
+    </div>
+    <div class="svc reveal delay-3" onclick="goTo('#contacto')">
+      <div class="svc-num">03</div>
+      <div class="svc-body"><h3>Web para hoteles y restaurantes</h3><p>Reservas directas, galería de lujo, menú interactivo. Menos comisión a plataformas externas, más clientes directos.</p></div>
+      <div class="svc-price">desde $450<span>pago único</span></div>
+    </div>
+    <div class="svc reveal delay-4" onclick="goTo('#contacto')">
+      <div class="svc-num">04</div>
+      <div class="svc-body"><h3>E-commerce y tiendas en línea</h3><p>Vende las 24 horas sin pagar comisión a marketplaces. Catálogo, carrito y pagos integrados. Tus reglas, tus ganancias.</p></div>
+      <div class="svc-price">desde $700<span>pago único</span></div>
+    </div>
+    <div class="svc reveal delay-5" onclick="goTo('#contacto')">
+      <div class="svc-num">05</div>
+      <div class="svc-body"><h3>Apps y sistemas a medida</h3><p>Para cuando el negocio ya creció. Control de inventario, apps móviles, sistemas de gestión. Desarrollado para durar.</p></div>
+      <div class="svc-price">desde $1,200<span>por proyecto</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="hl"></div>
+
+<!-- PORTAFOLIO -->
+<section class="sec" id="portafolio">
+  <div class="stag reveal">Portafolio</div>
+  <p style="font-size:12px;color:var(--muted);margin:-40px 0 48px;font-weight:300;letter-spacing:.2px">Proyectos reales que hemos desarrollado para clientes en Guatemala.</p>
+  <div class="port-grid">
+
+    <!-- SIBEL CRUZ -->
+    <div class="port-card reveal delay-1 scale-in" onclick="window.open('https://matiasvelasquezcrz-gif.github.io/NewpaginwebofSIBeltraduccion/','_blank','noopener,noreferrer')">
+      <div class="port-card-inner">
+        <div class="mock" style="background:#0a1628;display:flex;flex-direction:column;height:100%">
+          <div class="mock-overlay"><span>Visitar sitio →</span></div>
+          <div style="background:#0d1e3a;padding:8px 14px;display:flex;align-items:center;gap:6px;flex-shrink:0">
+            <div style="width:5px;height:5px;border-radius:50%;background:#e0e0e0"></div>
+            <div style="width:5px;height:5px;border-radius:50%;background:#e0e0e0"></div>
+            <div style="width:5px;height:5px;border-radius:50%;background:#e0e0e0"></div>
+            <div style="flex:1;text-align:center;font-size:7px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:1px">SIBEL CRUZ</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;background:linear-gradient(135deg,#0d1e3a,#1a3a6a)">
+            <div style="font-size:18px;color:#fff;font-weight:300;font-family:'Cormorant Garamond',serif;letter-spacing:2px;margin-bottom:4px">Sibel Cruz</div>
+            <div style="font-size:7px;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase">Traductora Jurada</div>
+            <div style="margin-top:12px;display:flex;gap:6px">
+              <div style="background:rgba(255,255,255,.1);padding:3px 8px;font-size:6px;color:rgba(255,255,255,.7);border-radius:2px">ES → EN</div>
+              <div style="background:rgba(255,255,255,.1);padding:3px 8px;font-size:6px;color:rgba(255,255,255,.7);border-radius:2px">EN → ES</div>
+            </div>
+          </div>
+          <div style="background:#0d1e3a;padding:8px 14px;display:flex;justify-content:space-around;flex-shrink:0">
+            <div style="text-align:center"><div style="font-size:8px;color:#fff;font-weight:500">500+</div><div style="font-size:5px;color:rgba(255,255,255,.4)">Docs</div></div>
+            <div style="text-align:center"><div style="font-size:8px;color:#fff;font-weight:500">200+</div><div style="font-size:5px;color:rgba(255,255,255,.4)">Clientes</div></div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tag">Web profesional — Guatemala</div>
+          <div class="port-h">Sibel Cruz · Traductora Jurada</div>
+          <div class="port-d">Sitio web completo con servicios, cotización por WhatsApp, política de privacidad y términos legales.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LA SIX BURGER -->
+    <div class="port-card reveal delay-2 scale-in" onclick="window.open('https://matiasvelasquezcrz-gif.github.io/lasix-menu/','_blank','noopener,noreferrer')">
+      <div class="port-card-inner">
+        <div class="mock" style="background:#1a0a0a;display:flex;flex-direction:column;height:100%">
+          <div class="mock-overlay"><span>Visitar sitio →</span></div>
+          <div style="background:#2a0a0a;padding:8px 14px;display:flex;align-items:center;gap:6px;flex-shrink:0">
+            <div style="width:5px;height:5px;border-radius:50%;background:#e0e0e0"></div>
+            <div style="width:5px;height:5px;border-radius:50%;background:#e0e0e0"></div>
+            <div style="width:5px;height:5px;border-radius:50%;background:#e0e0e0"></div>
+            <div style="flex:1;text-align:center;font-size:7px;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:1px">LA SIX</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;background:linear-gradient(135deg,#2a0a0a,#4a1515)">
+            <div style="font-size:20px;color:#fff;font-weight:700;letter-spacing:4px;margin-bottom:2px">LA SIX</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.5);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px">Burger</div>
+            <div style="background:rgba(255,200,0,.15);border:1px solid rgba(255,200,0,.3);padding:3px 10px;font-size:6px;color:#ffc800;border-radius:2px;letter-spacing:1px">MENÚ DIGITAL</div>
+          </div>
+          <div style="background:#2a0a0a;padding:8px 14px;display:flex;justify-content:space-around;flex-shrink:0">
+            <div style="text-align:center"><div style="font-size:7px;color:rgba(255,255,255,.6)">Q45 – Q100</div><div style="font-size:5px;color:rgba(255,255,255,.4)">Precios</div></div>
+            <div style="text-align:center"><div style="font-size:7px;color:rgba(255,255,255,.6)">🧑‍🍳</div><div style="font-size:5px;color:rgba(255,255,255,.4)">Combos</div></div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tag">Menú digital — Zona 6, Guatemala</div>
+          <div class="port-h">La Six Burger</div>
+          <div class="port-d">Menú interactivo con categorías, precios, combos y enlace directo a WhatsApp para pedidos a domicilio.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROWIT STUDIO -->
+    <div class="port-card reveal delay-3 scale-in" onclick="goTo('#contacto')">
+      <div class="port-card-inner">
+        <div class="mock" style="background:#111008;display:flex;flex-direction:column;height:100%">
+          <div class="mock-overlay"><span>Ver proyecto →</span></div>
+          <div style="background:#1a1812;padding:8px 14px;display:flex;align-items:center;gap:6px;flex-shrink:0">
+            <div style="width:5px;height:5px;border-radius:50%;background:#e0e0e0"></div>
+            <div style="width:5px;height:5px;border-radius:50%;background:#e0e0e0"></div>
+            <div style="width:5px;height:5px;border-radius:50%;background:#e0e0e0"></div>
+            <div style="flex:1;text-align:center;font-size:7px;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:2px">GROW<span style="color:#b8975a">IT</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;background:linear-gradient(135deg,#111008,#1a1812)">
+            <div style="font-size:16px;color:#fff;font-weight:300;font-family:'Cormorant Garamond',serif;letter-spacing:4px;margin-bottom:2px">Grow<span style="color:#b8975a">it</span></div>
+            <div style="font-size:7px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase">Diseño web · Guatemala</div>
+            <div style="margin-top:10px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center">
+              <div style="border:0.5px solid rgba(255,255,255,.15);padding:2px 6px;font-size:5px;color:rgba(255,255,255,.5);border-radius:2px">HTML</div>
+              <div style="border:0.5px solid rgba(255,255,255,.15);padding:2px 6px;font-size:5px;color:rgba(255,255,255,.5);border-radius:2px">CSS</div>
+              <div style="border:0.5px solid rgba(255,255,255,.15);padding:2px 6px;font-size:5px;color:rgba(255,255,255,.5);border-radius:2px">JS</div>
+            </div>
+          </div>
+          <div style="background:#1a1812;padding:8px 14px;display:flex;justify-content:space-around;flex-shrink:0">
+            <div style="text-align:center"><div style="font-size:7px;color:rgba(255,255,255,.6)">Sitio de agencia</div><div style="font-size:5px;color:rgba(255,255,255,.4)">Propio</div></div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tag">Agencia web — Guatemala</div>
+          <div class="port-h">Growit Studio</div>
+          <div class="port-d">Nuestro propio sitio de agencia: diseño premium, animaciones, portafolio, planes y formulario con WhatsApp.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="hl"></div>
+
+<!-- WHY -->
+<section class="sec">
+  <div class="stag reveal">Por qué Growit</div>
+  <div class="why-grid">
+    <div class="wi reveal delay-1"><div class="wi-n">01</div><h4>Sin plantillas de WordPress</h4><p>Cada web desde cero. Tu competencia no puede copiar tu sitio porque no existe en ningún marketplace.</p></div>
+    <div class="wi reveal delay-2"><div class="wi-n">02</div><h4>Rápidas en móvil</h4><p>El 80% de tus clientes llega desde el teléfono. Todas nuestras webs cargan en menos de 2 segundos.</p></div>
+    <div class="wi reveal delay-3"><div class="wi-n">03</div><h4>Te enseñamos a usarla</h4><p>Te capacitamos para actualizar tu web tú mismo. Sin depender de nosotros para cambiar un precio o foto.</p></div>
+    <div class="wi reveal delay-4"><div class="wi-n">04</div><h4>SEO incluido</h4><p>Tu web aparece en Google para lo que importa. Clínica en Zona 10, hotel en Antigua — te encontramos.</p></div>
+    <div class="wi reveal delay-5"><div class="wi-n">05</div><h4>Soporte en Guatemala</h4><p>Una persona real que contesta por WhatsApp cuando algo no funciona. No tickets, no bots.</p></div>
+    <div class="wi reveal delay-6"><div class="wi-n">06</div><h4>Precio transparente</h4><p>El precio que acordamos es el que pagas. Sin sorpresas, sin extras ocultos al entregar.</p></div>
+  </div>
+</section>
+
+<div class="hl"></div>
+
+<!-- PROCESO -->
+<section class="sec">
+  <div class="stag reveal">Proceso</div>
+  <div class="process">
+    <div class="ps reveal"><div class="ps-n">01</div><div><h3>Llamada de 30 minutos</h3><p>Entendemos tu negocio y qué necesitas lograr. Sin presión, sin venta agresiva.</p></div><div class="ps-days">Día 1</div></div>
+    <div class="ps reveal delay-1"><div class="ps-n">02</div><div><h3>Propuesta y diseño visual</h3><p>Presentamos el concepto completo. Tú apruebas antes de que escribamos una sola línea de código.</p></div><div class="ps-days">Días 2–4</div></div>
+    <div class="ps reveal delay-2"><div class="ps-n">03</div><div><h3>Desarrollo con tu contenido</h3><p>Construimos con tus fotos, textos y servicios reales. Nada inventado sin consultarte.</p></div><div class="ps-days">Días 5–10</div></div>
+    <div class="ps reveal delay-3"><div class="ps-n">04</div><div><h3>Revisión y ajustes</h3><p>Dos rondas de cambios incluidas. Ajustamos hasta que estés completamente satisfecho.</p></div><div class="ps-days">Días 11–12</div></div>
+    <div class="ps reveal delay-4"><div class="ps-n">05</div><div><h3>Lanzamiento y entrega</h3><p>Publicamos, te capacitamos y te entregamos todo. Tu web, lista para trabajar por ti.</p></div><div class="ps-days">Día 12–14</div></div>
+  </div>
+</section>
+
+<div class="hl"></div>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="stag reveal">Preguntas frecuentes</div>
+  <div class="faq-list" style="max-width:680px;margin:0 auto">
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q"><h4>¿Cuánto tiempo toma tener mi web lista?</h4><span>+</span></div>
+      <div class="faq-a"><p>Depende del plan. Una web básica la entregamos en 5–7 días. Proyectos más complejos como clínicas o tiendas en línea pueden tomar hasta 21 días. Te damos una fecha exacta antes de empezar.</p></div>
+    </div>
+    <div class="faq-item reveal delay-1" onclick="toggleFaq(this)">
+      <div class="faq-q"><h4>¿Necesito saber de tecnología para administrar mi web?</h4><span>+</span></div>
+      <div class="faq-a"><p>No. Te capacitamos para que puedas hacer cambios básicos como actualizar precios, fotos o textos. Si algo se complica, nosotros lo resolvemos.</p></div>
+    </div>
+    <div class="faq-item reveal delay-2" onclick="toggleFaq(this)">
+      <div class="faq-q"><h4>¿El dominio y el hosting están incluidos?</h4><span>+</span></div>
+      <div class="faq-a"><p>En los planes de mantenimiento anual sí. Si contratas solo el desarrollo, podemos ayudarte a configurarlos o tú puedes usar tu propio proveedor.</p></div>
+    </div>
+    <div class="faq-item reveal delay-3" onclick="toggleFaq(this)">
+      <div class="faq-q"><h4>¿Puedo ver un diseño antes de pagar?</h4><span>+</span></div>
+      <div class="faq-a"><p>Sí. Primero te presentamos el concepto visual completo. Solo cuando apruebas el diseño empezamos a desarrollar. Sin sorpresas.</p></div>
+    </div>
+    <div class="faq-item reveal delay-4" onclick="toggleFaq(this)">
+      <div class="faq-q"><h4>¿Qué pasa si no me gusta el resultado?</h4><span>+</span></div>
+      <div class="faq-a"><p>Incluimos dos rondas de cambios en todos los planes. Si aún así no quedas satisfecho, no publicamos hasta que estés contento. Tu aprobación final es necesaria para lanzar.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="hl"></div>
+
+<!-- PLANES -->
+<section class="sec" id="planes" style="padding-top:100px">
+  <div class="stag reveal">Inversión</div>
+  <p class="hsub reveal delay-1" style="max-width:520px;margin:0 auto 48px;text-align:center">El desarrollo de tu web se paga una sola vez. El mantenimiento es opcional y se paga cada año para mantener tu sitio seguro, actualizado y en línea.</p>
+
+  <div style="margin-bottom:60px">
+    <p class="stag reveal delay-2" style="margin-bottom:32px;font-size:9px">Pago único — tu web</p>
+    <div class="plans-wrap" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;border:none">
+      <div class="plan reveal delay-2" style="max-width:175px;padding:32px 20px">
+        <div class="pt">Básica</div><div class="pp" style="font-size:36px">$79</div><div class="pper">pago único</div>
+        <ul class="pf"><li>Páginas<span>hasta 3</span></li><li>Móvil optimizado<span>sí</span></li><li>Contacto directo<span>sí</span></li><li>Entrega<span>5–7 días</span></li></ul>
+        <button class="pb" onclick="goTo('#contacto')">Solicitar</button>
+      </div>
+      <div class="plan reveal delay-3" style="max-width:175px;padding:32px 20px">
+        <div class="pt">Intermedia</div><div class="pp" style="font-size:36px">$129</div><div class="pper">pago único</div>
+        <ul class="pf"><li>Páginas<span>hasta 6</span></li><li>SEO básico<span>sí</span></li><li>WhatsApp directo<span>sí</span></li><li>Formulario<span>sí</span></li><li>Entrega<span>7–10 días</span></li></ul>
+        <button class="pb" onclick="goTo('#contacto')">Solicitar</button>
+      </div>
+      <div class="plan reveal delay-4" style="max-width:175px;padding:32px 20px">
+        <div class="pt">Profesional</div><div class="pp" style="font-size:36px">$350</div><div class="pper">pago único</div>
+        <ul class="pf"><li>Páginas<span>hasta 10</span></li><li>Reservas online<span>sí</span></li><li>SEO avanzado<span>sí</span></li><li>Capacitación<span>1 hora</span></li><li>Entrega<span>12–14 días</span></li></ul>
+        <button class="pb" onclick="goTo('#contacto')">El más pedido</button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p class="stag reveal delay-4" style="margin-bottom:32px;font-size:9px">Opcional — mantenimiento anual</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;border:none">
+      <div class="plan mt reveal delay-5" style="max-width:260px">
+        <div class="pt">Esencial</div><div class="pp">$75<span style="font-size:14px;color:var(--muted);font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0">/año</span></div><div class="pper">dominio + hosting + hasta 4 cambios</div>
+        <ul class="pf"><li>Dominio<span>incluido</span></li><li>Hosting<span>incluido</span></li><li>Cambios contenido<span>hasta 4/año</span></li><li>Backups<span>mensuales</span></li></ul>
+        <button class="pb" onclick="goTo('#contacto')">Contratar</button>
+      </div>
+      <div class="plan mt reveal delay-5" style="max-width:260px">
+        <div class="pt">Completo</div><div class="pp">$140<span style="font-size:14px;color:var(--muted);font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0">/año</span></div><div class="pper">todo incluido + soporte prioritario</div>
+        <ul class="pf"><li>Dominio<span>incluido</span></li><li>Hosting<span>incluido</span></li><li>Cambios contenido<span>ilimitados</span></li><li>Soporte prioritario<span>sí</span></li><li>Backups<span>mensuales</span></li></ul>
+        <button class="pb" onclick="goTo('#contacto')">Contratar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hl"></div>
+
+<!-- CONTACTO -->
+<section class="sec" id="contacto">
+  <div class="stag reveal">Contacto</div>
+  <div class="contact-wrap">
+    <div class="contact-left reveal from-left">
+      <h2>Tu próximo cliente<br>empieza por<br>cómo te ven.</h2>
+      <p class="sub">Cuéntanos sobre tu negocio y en menos de 24 horas te enviamos una propuesta. Sin tecnicismos, sin presión.</p>
+      <div class="cdetail"><span>WhatsApp</span><a href="https://wa.me/50235060070">+502 3506-0070</a></div>
+      <div class="cdetail"><span>Email</span><a href="mailto:grow.it.management@gmail.com">grow.it.management@gmail.com</a></div>
+      <div class="cdetail"><span>Ciudad</span>Guatemala, GT</div>
+      <div class="cdetail" style="border-bottom:none"><span>Horario</span>Lun–Vie, 9–18h</div>
+      <div class="social-links">
+        <a class="social-link" href="https://instagram.com/groow_it.official" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <a class="social-link" href="https://wa.me/50235060070">WhatsApp ↗</a>
+      </div>
+    </div>
+    <div class="contact-right reveal from-right">
+      <div id="formWrap">
+        <div class="field"><label>Nombre</label><input type="text" placeholder="Tu nombre completo" id="fn"></div>
+        <div class="field"><label>WhatsApp o email</label><input type="text" placeholder="+502 o tu@email.com" id="fc"></div>
+        <div class="field"><label>Tipo de proyecto</label>
+          <select id="ft"><option value="">Selecciona una opción</option><option>Web básica ($79)</option><option>Web profesional ($129)</option><option>Web para clínica o consultorio</option><option>Web para hotel o restaurante</option><option>Tienda en línea (e-commerce)</option><option>App o sistema a medida</option><option>Mantenimiento web anual</option><option>Otro</option></select>
+        </div>
+        <div class="field"><label>¿Qué necesitas?</label><textarea id="fm" placeholder="Cuéntanos sobre tu negocio y lo que buscas lograr..."></textarea></div>
+        <!-- Honeypot anti-spam: invisible para personas, los bots lo llenan automáticamente -->
+        <input type="text" id="fweb" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+        <button class="fsub" onclick="submitForm()">Enviar solicitud</button>
+      </div>
+      <div class="fthnk" id="formThnk">
+        <p>Recibido.</p>
+        <span>Te contactamos en menos de 24 horas por WhatsApp.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top reveal">
+    <div class="ft-brand">
+      <span class="ft-logo">Grow<span>it</span></span>
+      <p>Webs que hacen crecer negocios en Guatemala y Centroamérica.</p>
+    </div>
+    <div style="display:flex;gap:56px;flex-wrap:wrap">
+      <div class="ft-col"><h5>Servicios</h5><a onclick="goTo('#servicios')">Web básica</a><a onclick="goTo('#servicios')">Clínicas</a><a onclick="goTo('#servicios')">Hoteles</a><a onclick="goTo('#servicios')">E-commerce</a><a onclick="goTo('#servicios')">Apps</a><a onclick="goTo('#contacto')">Mantenimiento</a></div>
+      <div class="ft-col"><h5>Empresa</h5><a onclick="goTo('#portafolio')">Portafolio</a><a onclick="goTo('#planes')">Inversión</a><a onclick="goTo('#faq')">FAQ</a><a href="https://instagram.com/groow_it.official" target="_blank" rel="noopener noreferrer">Instagram</a><a onclick="goTo('#contacto')">Contacto</a></div>
+      <div class="ft-col"><h5>Legal</h5><a onclick="showLegal('privacy')">Privacidad</a><a onclick="showLegal('terms')">Términos</a><a onclick="showLegal('cookies')">Cookies</a></div>
+    </div>
+  </div>
+  <div class="ft-bottom reveal delay-2">
+    <p>© 2025 Growit Studio — Guatemala</p>
+    <p>grow.it.management@gmail.com</p>
+  </div>
+</footer>
+
+<div class="ck" id="ck">
+  <p>Usamos cookies para mejorar tu experiencia. Consulta nuestra <a onclick="showLegal('cookies')">política de cookies</a>.</p>
+  <div class="ckb"><button class="cbd" onclick="hideCk()">Solo esenciales</button><button class="cba" onclick="hideCk()">Aceptar todo</button></div>
+</div>
+
+<div class="lbg" id="lbg">
+  <div class="lbox">
+    <h2 id="lt"></h2><div id="lb"></div>
+    <button class="lclose" onclick="hideLegal()">Cerrar</button>
+  </div>
+</div>
+
+<script>
+// NAV entrada
+setTimeout(()=>document.getElementById('mainNav').classList.add('loaded'),100);
+
+// Hero palabras
+const words=['w1','w2','w3','w4','w5','w6','w7','w8'];
+words.forEach((id,i)=>{
+  setTimeout(()=>{
+    const el=document.getElementById(id);
+    if(el)el.classList.add('up');
+  },300+i*90);
+});
+
+// Línea kicker
+setTimeout(()=>{
+  const kl=document.getElementById('kickerLine');
+  if(kl)kl.classList.add('visible');
+},200);
+
+// Cookie bar
+if(!localStorage.getItem('growit-cookies')){
+  setTimeout(()=>document.getElementById('ck').classList.add('show'),800);
+}
+
+// IntersectionObserver para reveals
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      // Counter animado
+      const bn=e.target.querySelector('[data-target]');
+      if(bn)animateCounter(bn);
+    }
+  });
+},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Observe line draws
+const lineObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.5});
+document.querySelectorAll('.line-draw').forEach(el=>lineObs.observe(el));
+
+// Counters en stats
+const statObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const bn=e.target.querySelector('[data-target]');
+      if(bn)animateCounter(bn);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.bi').forEach(el=>statObs.observe(el));
+
+function animateCounter(el){
+  if(el.dataset.animated)return;
+  el.dataset.animated='1';
+  const target=parseInt(el.dataset.target);
+  const suffix=el.dataset.suffix||'';
+  const prefix=el.dataset.prefix||'';
+  const duration=1400;
+  const start=performance.now();
+  function step(now){
+    const p=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-p,3);
+    el.textContent=prefix+Math.round(ease*target)+suffix;
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// Parallax sutil en hero
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  const hero=document.querySelector('.hero h1');
+  if(hero&&y<600)hero.style.transform=`translateY(${y*0.08}px)`;
+});
+
+function goTo(id){
+  const el=document.querySelector(id);
+  if(el)el.scrollIntoView({behavior:'smooth'});
+}
+
+let formSubmitting=false;
+function submitForm(){
+  // Honeypot: si un bot llenó este campo invisible, se descarta silenciosamente
+  const hp=document.getElementById('fweb').value;
+  if(hp){return}
+
+  // Evita doble envío por doble clic
+  if(formSubmitting)return;
+
+  const n=document.getElementById('fn').value.trim().slice(0,100);
+  const c=document.getElementById('fc').value.trim().slice(0,100);
+  const t=document.getElementById('ft').value;
+  const m=document.getElementById('fm').value.trim().slice(0,600);
+
+  if(!n||!c){alert('Por favor completa tu nombre y contacto.');return}
+  if(n.length<2){alert('Por favor ingresa un nombre válido.');return}
+
+  // Validación básica: debe parecer teléfono o email
+  const looksLikePhone=/[\d+][\d\s\-()]{6,}/.test(c);
+  const looksLikeEmail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c);
+  if(!looksLikePhone && !looksLikeEmail){alert('Ingresa un número de WhatsApp o email válido.');return}
+
+  formSubmitting=true;
+
+  const msg = encodeURIComponent(
+    'Hola Growit Studio 👋\n\n' +
+    'Quiero solicitar una propuesta:\n' +
+    '• Nombre: ' + n + '\n' +
+    '• Contacto: ' + c + '\n' +
+    '• Tipo de proyecto: ' + (t || 'No especificado') + '\n' +
+    '• Mensaje: ' + (m || 'Sin mensaje adicional')
+  );
+
+  window.open('https://wa.me/50235060070?text=' + msg, '_blank','noopener,noreferrer');
+
+  document.getElementById('formWrap').style.display='none';
+  document.getElementById('formThnk').style.display='block';
+}
+
+function hideCk(){
+  localStorage.setItem('growit-cookies','accepted');
+  document.getElementById('ck').classList.remove('show');
+  setTimeout(()=>document.getElementById('ck').classList.add('hidden'),500);
+}
+
+const ld={
+  privacy:{title:'Política de privacidad',body:'<h3>Datos que recopilamos</h3><p>Nombre, email y datos de contacto que proporcionas voluntariamente. Datos de navegación anónimos mediante cookies.</p><h3>Uso</h3><p>Únicamente para responderte y mejorar nuestro servicio. No vendemos datos a terceros.</p><h3>Tus derechos</h3><p>Acceso, corrección o eliminación en cualquier momento escribiendo a grow.it.management@gmail.com.</p>'},
+  terms:{title:'Términos y condiciones',body:'<h3>Servicios</h3><p>Cada proyecto se define mediante propuesta escrita aceptada por ambas partes.</p><h3>Pagos</h3><p>50% de anticipo para iniciar. Saldo al aprobar el trabajo final. Anticipo no reembolsable si el cliente cancela.</p><h3>Garantía</h3><p>30 días de soporte técnico sin costo tras el lanzamiento.</p>'},
+  cookies:{title:'Política de cookies',body:'<h3>Cookies esenciales</h3><p>Para el funcionamiento básico. No pueden desactivarse.</p><h3>Cookies analíticas</h3><p>Google Analytics de forma anónima. Puedes optar por no participar desde tu navegador.</p>'}
+};
+
+function showLegal(t){
+  document.getElementById('lt').textContent=ld[t].title;
+  document.getElementById('lb').innerHTML=ld[t].body;
+  document.getElementById('lbg').classList.add('open');
+}
+function hideLegal(){document.getElementById('lbg').classList.remove('open')}
+
+function toggleFaq(el){
+  el.classList.toggle('open');
+}
+
+// Tema claro/oscuro
+const savedTheme = localStorage.getItem('growit-theme');
+const sunSVG='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+const moonSVG='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>';
+
+if(savedTheme==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('themeToggle').innerHTML=moonSVG}
+
+function toggleTheme(){
+  const html=document.documentElement;
+  const btn=document.getElementById('themeToggle');
+  if(html.getAttribute('data-theme')==='dark'){
+    html.removeAttribute('data-theme');
+    btn.innerHTML=sunSVG;
+    localStorage.setItem('growit-theme','light');
+  }else{
+    html.setAttribute('data-theme','dark');
+    btn.innerHTML=moonSVG;
+    localStorage.setItem('growit-theme','dark');
+  }
+}
+</script>
+</body>
+</html>
