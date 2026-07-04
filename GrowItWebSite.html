@@ -345,6 +345,18 @@ footer{border-top:0.5px solid var(--line);padding:52px 48px 36px}
 .lbox h3{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);margin:24px 0 10px;font-weight:500}
 .lbox p{font-size:13px;color:var(--ink2);line-height:1.8;margin-bottom:10px;font-weight:300}
 .lclose{margin-top:32px;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:13px 28px;background:var(--ink);color:var(--w);border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:400}
+
+/* COSTA RICA */
+.cr-wrap{padding:0;overflow:hidden;position:relative;display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--line)}
+.cr-img{min-height:320px;background:url('costa-rica.jpg') center/cover no-repeat;position:relative}
+.cr-img::after{content:'';position:absolute;inset:0;background:rgba(17,16,8,.2)}
+.cr-body{padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+.cr-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.cr-body h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,38px);font-weight:300;color:var(--ink);letter-spacing:-.5px;line-height:1.15;margin-bottom:20px}
+.cr-body p{font-size:13px;line-height:1.9;color:var(--ink2);font-weight:300;max-width:460px}
+.cr-body .cr-firma{margin-top:20px;font-size:11px;color:var(--gold);font-weight:400;letter-spacing:1px}
+[data-theme="dark"] .cr-body h2{color:var(--w)}
+[data-theme="dark"] .cr-body p{color:rgba(255,255,255,.65)}
 </style>
 </head>
 <body>
@@ -582,6 +594,21 @@ footer{border-top:0.5px solid var(--line);padding:52px 48px 36px}
     <div class="ps reveal delay-2"><div class="ps-n">03</div><div><h3>Desarrollo con tu contenido</h3><p>Construimos con tus fotos, textos y servicios reales. Nada inventado sin consultarte.</p></div><div class="ps-days">Días 5–10</div></div>
     <div class="ps reveal delay-3"><div class="ps-n">04</div><div><h3>Revisión y ajustes</h3><p>Dos rondas de cambios incluidas. Ajustamos hasta que estés completamente satisfecho.</p></div><div class="ps-days">Días 11–12</div></div>
     <div class="ps reveal delay-4"><div class="ps-n">05</div><div><h3>Lanzamiento y entrega</h3><p>Publicamos, te capacitamos y te entregamos todo. Tu web, lista para trabajar por ti.</p></div><div class="ps-days">Día 12–14</div></div>
+  </div>
+</section>
+
+<div class="hl"></div>
+
+<!-- COSTA RICA -->
+<section class="sec" style="padding:0;max-width:100%">
+  <div class="cr-wrap">
+    <div class="cr-img reveal from-left"></div>
+    <div class="cr-body reveal from-right">
+      <div class="cr-tag">Nuestra inspiración</div>
+      <h2>De Costa Rica a Guatemala,<br>una idea que nació<br>en familia.</h2>
+      <p>Todo empezó gracias a mi tío, que desde Costa Rica me abrió los ojos: "ayudá a los negocios locales a tener presencia digital". Con esa visión y su apoyo, nació Growit Studio. Esta va por vos, tío.</p>
+      <div class="cr-firma">— Pura vida 🇨🇷</div>
+    </div>
   </div>
 </section>
 
@@ -893,6 +920,20 @@ function toggleTheme(){
     localStorage.setItem('growit-theme','dark');
   }
 }
+
+// Auto-hide nav on scroll
+let lastScroll=0;
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{
+  const cur=window.scrollY;
+  if(cur>80){
+    if(cur>lastScroll)nav.style.transform='translateY(-100%)';
+    else nav.style.transform='translateY(0)';
+  }else{
+    nav.style.transform='translateY(0)';
+  }
+  lastScroll=cur;
+},{passive:true});
 </script>
 </body>
 </html>
