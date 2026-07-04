@@ -87,7 +87,14 @@ nav.loaded{transform:translateY(0)}
 .ncta:hover{background:var(--ink);color:var(--w)}
 
 /* HERO */
-.hero{padding:100px 48px 80px;max-width:1000px;margin:0 auto;overflow:hidden}
+.hero{padding:100px 48px 80px;max-width:100%;margin:0 auto;overflow:hidden;position:relative;z-index:0;background-image:url('guatemala-bg.jpg');background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(17,16,8,.45);z-index:1;pointer-events:none}
+.hero .kicker,.hero h1,.hero .hsub,.hero .hact{position:relative;z-index:2;color:var(--w)}
+.hero .kicker{color:rgba(255,255,255,.6)}
+.hero .hsub{color:rgba(255,255,255,.8)}
+.hero h1 em{color:var(--gold)}
+.hero .bm{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.hero .bm:hover{background:var(--w);color:var(--ink)}
 .kicker{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:40px;display:flex;align-items:center;gap:16px}
 .kicker-line{width:0;height:0.5px;background:var(--muted);transition:width .8s .4s cubic-bezier(.25,.46,.45,.94)}
 .kicker-line.visible{width:28px}
