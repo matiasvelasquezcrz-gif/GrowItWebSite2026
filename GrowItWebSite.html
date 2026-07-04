@@ -357,6 +357,12 @@ footer{border-top:0.5px solid var(--line);padding:52px 48px 36px}
 .cr-body .cr-firma{margin-top:20px;font-size:11px;color:var(--gold);font-weight:400;letter-spacing:1px}
 [data-theme="dark"] .cr-body h2{color:var(--w)}
 [data-theme="dark"] .cr-body p{color:rgba(255,255,255,.65)}
+
+/* IMAGE BREAK */
+.img-break{width:100%;height:400px;background:url('antigua-guatemala.jpg') center/cover no-repeat;position:relative}
+.img-break::after{content:'';position:absolute;inset:0;background:rgba(17,16,8,.25)}
+.img-break .ib-text{position:absolute;bottom:40px;left:48px;z-index:2;font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#fff;letter-spacing:1px;line-height:1.3}
+.img-break .ib-text span{font-size:11px;font-family:'Inter',sans-serif;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);display:block;margin-top:8px;font-weight:300}
 </style>
 </head>
 <body>
@@ -582,6 +588,13 @@ footer{border-top:0.5px solid var(--line);padding:52px 48px 36px}
     <div class="wi reveal delay-6"><div class="wi-n">06</div><h4>Precio transparente</h4><p>El precio que acordamos es el que pagas. Sin sorpresas, sin extras ocultos al entregar.</p></div>
   </div>
 </section>
+
+<div class="hl"></div>
+
+<!-- IMAGE BREAK: Antigua Guatemala -->
+<div class="img-break reveal scale-in">
+  <div class="ib-text">Antigua Guatemala<span>Donde la historia y el volcán se encuentran</span></div>
+</div>
 
 <div class="hl"></div>
 
