@@ -86,6 +86,13 @@ nav.loaded{transform:translateY(0)}
 .ncta{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);cursor:pointer;padding:10px 24px;border:0.5px solid var(--ink);background:transparent;font-family:'Inter',sans-serif;font-weight:400;transition:all .2s}
 .ncta:hover{background:var(--ink);color:var(--w)}
 
+/* HAMBURGER */
+.hm{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;z-index:210}
+.hm span{display:block;width:22px;height:2px;background:var(--ink);transition:transform .3s,opacity .3s;border-radius:1px}
+.hm.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hm.open span:nth-child(2){opacity:0}
+.hm.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
 /* HERO */
 .hero{padding:100px 48px 80px;max-width:100%;margin:0 auto;overflow:hidden;position:relative;z-index:0;background-image:url('guatemala-bg.jpg');background-size:cover;background-position:center;background-repeat:no-repeat}
 .hero::before{content:'';position:absolute;inset:0;background:rgba(17,16,8,.45);z-index:1;pointer-events:none}
@@ -362,9 +369,12 @@ footer > div{position:relative;z-index:1}
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
 nav{padding:16px 20px}
-.nl{gap:14px}
-.nl a{font-size:9px;letter-spacing:1px}
-.ncta{padding:8px 14px;font-size:9px;letter-spacing:1px}
+.hm{display:flex}
+.nl{position:fixed;top:0;right:-100%;width:260px;height:100vh;background:var(--w);flex-direction:column;padding:88px 32px 32px;gap:24px;transition:right .35s cubic-bezier(.25,.46,.45,.94);z-index:205;box-shadow:-4px 0 20px rgba(0,0,0,.08);overflow-y:auto}
+.nl.open{right:0}
+.nl a{font-size:14px;letter-spacing:2px}
+.ncta{padding:12px 20px;font-size:11px;letter-spacing:2px;width:100%;text-align:center}
+#themeToggle{position:absolute;top:20px;right:20px}
 .hero{padding:60px 20px 50px}
 h1{font-size:clamp(36px,10vw,52px);margin-bottom:28px}
 .hsub{font-size:13px;max-width:340px;margin-bottom:32px}
@@ -422,12 +432,15 @@ footer{padding:36px 20px 28px}
 
 <nav id="mainNav">
   <span class="logo">Grow<span>it</span></span>
-  <div class="nl">
-    <a onclick="goTo('#servicios')">Servicios</a>
-    <a onclick="goTo('#portafolio')">Portafolio</a>
-    <a onclick="goTo('#faq')">FAQ</a>
-    <a onclick="goTo('#planes')">Inversión</a>
-    <button class="ncta" onclick="goTo('#contacto')">Hablemos</button>
+  <button class="hm" id="hmBtn" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nl" id="nl">
+    <a onclick="closeMenu();goTo('#servicios')">Servicios</a>
+    <a onclick="closeMenu();goTo('#portafolio')">Portafolio</a>
+    <a onclick="closeMenu();goTo('#faq')">FAQ</a>
+    <a onclick="closeMenu();goTo('#planes')">Inversión</a>
+    <button class="ncta" onclick="closeMenu();goTo('#contacto')">Hablemos</button>
     <button id="themeToggle" style="background:none;border:none;cursor:pointer;padding:6px;border-radius:50%;color:var(--muted);transition:color .2s,background .2s;display:flex;align-items:center;justify-content:center" onclick="toggleTheme()" aria-label="Cambiar tema">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
         <circle cx="12" cy="12" r="5"/>
@@ -924,6 +937,15 @@ window.addEventListener('scroll',()=>{
 function goTo(id){
   const el=document.querySelector(id);
   if(el)el.scrollIntoView({behavior:'smooth'});
+}
+
+function toggleMenu(){
+  document.getElementById('hmBtn').classList.toggle('open');
+  document.getElementById('nl').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('hmBtn').classList.remove('open');
+  document.getElementById('nl').classList.remove('open');
 }
 
 let formSubmitting=false;
