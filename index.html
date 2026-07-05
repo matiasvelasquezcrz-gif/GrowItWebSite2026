@@ -980,12 +980,11 @@ function submitForm(){
   formSubmitting=true;
 
   const msg = encodeURIComponent(
-    'Hola Growit Studio 👋\n\n' +
-    'Quiero solicitar una propuesta:\n' +
-    '• Nombre: ' + n + '\n' +
-    '• Contacto: ' + c + '\n' +
-    '• Tipo de proyecto: ' + (t || 'No especificado') + '\n' +
-    '• Mensaje: ' + (m || 'Sin mensaje adicional')
+    '¡Hola! 👋 Soy ' + n + ' y me gustaría solicitar una propuesta con Growit Studio.\n' +
+    '📁 Tipo de proyecto: ' + (t || 'Otro') + '\n' +
+    '📝 Sobre mi negocio: ' + (m || 'No especificado') + '\n' +
+    '📲 Mi contacto: ' + c + '\n' +
+    'Quedo atento/a a la propuesta. ¡Gracias!'
   );
 
   window.open('https://wa.me/50235060079?text=' + msg, '_blank','noopener,noreferrer');
