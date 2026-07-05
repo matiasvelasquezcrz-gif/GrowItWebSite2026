@@ -373,7 +373,7 @@ footer > div{position:relative;z-index:1}
 @media(max-width:768px){
 nav{padding:16px 20px}
 .hm{display:flex}
-.nl{position:fixed;top:0;right:0;width:260px;height:100vh;background:var(--w);flex-direction:column;padding:88px 32px 32px;gap:24px;transition:transform .35s cubic-bezier(.25,.46,.45,.94);z-index:205;box-shadow:-4px 0 20px rgba(0,0,0,.08);overflow-y:auto;transform:translateX(100%)}
+.nl{position:absolute;top:0;right:0;min-width:280px;width:80vw;max-width:400px;height:100vh;background:var(--w);flex-direction:column;padding:88px 32px 32px;gap:24px;transition:transform .35s cubic-bezier(.25,.46,.45,.94);z-index:205;box-shadow:-4px 0 24px rgba(0,0,0,.12);overflow-y:auto;transform:translateX(100%)}
 .nl.open{transform:translateX(0)}
 .nl a{font-size:14px;letter-spacing:2px}
 .ncta{padding:12px 20px;font-size:11px;letter-spacing:2px;width:100%;text-align:center}
