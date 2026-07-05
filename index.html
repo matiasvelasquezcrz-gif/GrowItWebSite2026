@@ -51,7 +51,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--w:#fff;--off:#f9f8f6;--line:#e0ddd8;--muted:#888580;--ink:#111008;--ink2:#2e2c27;--gold:#b8975a}
 [data-theme="dark"]{--w:#0d0c0a;--off:#111008;--line:#1f1d18;--muted:#6b685e;--ink:#ece8de;--ink2:#b8b2a6;--gold:#c9a85c}
-body{font-family:'Inter',sans-serif;background:var(--w);color:var(--ink);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--w);color:var(--ink);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+body.noscroll{overflow:hidden}
 
 /* ── ANIMACIONES ── */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
@@ -370,8 +371,8 @@ footer > div{position:relative;z-index:1}
 @media(max-width:768px){
 nav{padding:16px 20px}
 .hm{display:flex}
-.nl{position:fixed;top:0;right:-100%;width:260px;height:100vh;background:var(--w);flex-direction:column;padding:88px 32px 32px;gap:24px;transition:right .35s cubic-bezier(.25,.46,.45,.94);z-index:205;box-shadow:-4px 0 20px rgba(0,0,0,.08);overflow-y:auto}
-.nl.open{right:0}
+.nl{position:fixed;top:0;right:0;width:260px;height:100vh;background:var(--w);flex-direction:column;padding:88px 32px 32px;gap:24px;transition:transform .35s cubic-bezier(.25,.46,.45,.94);z-index:205;box-shadow:-4px 0 20px rgba(0,0,0,.08);overflow-y:auto;transform:translateX(100%)}
+.nl.open{transform:translateX(0)}
 .nl a{font-size:14px;letter-spacing:2px}
 .ncta{padding:12px 20px;font-size:11px;letter-spacing:2px;width:100%;text-align:center}
 #themeToggle{position:absolute;top:20px;right:20px}
@@ -942,10 +943,12 @@ function goTo(id){
 function toggleMenu(){
   document.getElementById('hmBtn').classList.toggle('open');
   document.getElementById('nl').classList.toggle('open');
+  document.body.classList.toggle('noscroll');
 }
 function closeMenu(){
   document.getElementById('hmBtn').classList.remove('open');
   document.getElementById('nl').classList.remove('open');
+  document.body.classList.remove('noscroll');
 }
 
 let formSubmitting=false;
