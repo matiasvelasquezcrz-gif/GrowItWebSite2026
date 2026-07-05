@@ -87,6 +87,8 @@ nav.loaded{transform:translateY(0)}
 .ncta{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);cursor:pointer;padding:10px 24px;border:0.5px solid var(--ink);background:transparent;font-family:'Inter',sans-serif;font-weight:400;transition:all .2s}
 .ncta:hover{background:var(--ink);color:var(--w)}
 
+/* NAV RIGHT */
+.nr{display:flex;align-items:center;gap:4px}
 /* HAMBURGER */
 .hm{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;z-index:210}
 .hm span{display:block;width:22px;height:2px;background:var(--ink);transition:transform .3s,opacity .3s;border-radius:1px}
@@ -433,15 +435,14 @@ footer{padding:36px 20px 28px}
 
 <nav id="mainNav">
   <span class="logo">Grow<span>it</span></span>
-  <button class="hm" id="hmBtn" onclick="toggleMenu()" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nl" id="nl">
-    <a onclick="closeMenu();goTo('#servicios')">Servicios</a>
-    <a onclick="closeMenu();goTo('#portafolio')">Portafolio</a>
-    <a onclick="closeMenu();goTo('#faq')">FAQ</a>
-    <a onclick="closeMenu();goTo('#planes')">Inversión</a>
-    <button class="ncta" onclick="closeMenu();goTo('#contacto')">Hablemos</button>
+  <div class="nr">
+    <div class="nl" id="nl">
+      <a onclick="closeMenu();goTo('#servicios')">Servicios</a>
+      <a onclick="closeMenu();goTo('#portafolio')">Portafolio</a>
+      <a onclick="closeMenu();goTo('#faq')">FAQ</a>
+      <a onclick="closeMenu();goTo('#planes')">Inversión</a>
+      <button class="ncta" onclick="closeMenu();goTo('#contacto')">Hablemos</button>
+    </div>
     <button id="themeToggle" style="background:none;border:none;cursor:pointer;padding:6px;border-radius:50%;color:var(--muted);transition:color .2s,background .2s;display:flex;align-items:center;justify-content:center" onclick="toggleTheme()" aria-label="Cambiar tema">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
         <circle cx="12" cy="12" r="5"/>
@@ -450,6 +451,9 @@ footer{padding:36px 20px 28px}
         <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
       </svg>
+    </button>
+    <button class="hm" id="hmBtn" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
